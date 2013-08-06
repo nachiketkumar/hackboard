@@ -11,7 +11,7 @@ Shows big blue button with bird and then the word Twitter
   </div>
 <% end %>
 
-<!-- either render the pins or the "Oh nooos" message from _empty partial for no pins -->
+<!-- either render the pins collection one by one using the _pin partial, or the "Oh nooos" message from _empty partial for no pins -->
 <%= render layout: 'layouts/pins' do %>
   <%= render(@pins) || render("empty") %>
 <% end %>
