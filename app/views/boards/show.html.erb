@@ -6,6 +6,9 @@
 gives a big line-height, some padding etc, and a fairly thick double line around it  -->
 <section class="board-meta row clearfix">
   <%= link_to @board.user, class: 'span3 board-user pull-left' do %>
+<!--   go to users/show.html.erb (the user's profile)
+The block below is the link content: the image of the user + the username
+The content_tag line will make username to be in a span element-->
     <%= image_tag @board.user_image_url %>
     <%= content_tag :span, @board.user_name %>
   <% end %>
