@@ -1,10 +1,17 @@
 <%= simple_form_for(@board, html: {class: 'form-horizontal'}) do |f| %>
-
+<!-- Generate a form for the current @board object; put the css class for a horizontal form which allows labels to be on the same line as the input area, to the left. Most of these classes are bootstrap classes.
+ -->
+<!-- first form item is name, "input-xlarge" gives a fairly long (2nd largest) input box -->
   <%= f.input :name, input_html: {class: 'input-xlarge'} %>
+<!-- second form item is description, "input-xxlarge" gives the longest input box, and it is 6 rows high -->
   <%= f.input :description, input_html: {class: 'input-xxlarge', rows: 6} %>
 
   <div class="form-actions">
+<!-- "form-actions" ends a form with a group of actions (buttons). When placed within a .form-actions, the buttons will automatically indent to line up with the form controls.
+The button will be a standard blue bootstrap button that will labeled "Cancel" and that takes one to the root path (pins/index)
+-->
     <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'Cancel', root_path %>
   </div>
 <% end %>
+
