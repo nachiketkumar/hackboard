@@ -3,5 +3,7 @@
   <h4><small><%= pluralize board.pins.count, "pin" %></small></h4>
   <%= image_tag board.cover if board.cover %>
 <% end %>
-<!-- generate a link for each board with board name followed by number of pins of that board
+<!-- generate a link for each board with board name followed by number of pins of that board followed by the word pin(s)
+
+  display the board cover background image if it exists
   -->

@@ -1,13 +1,15 @@
 <section class="board-header">
   <h1><%= @board.name %></h1>
 </section>
-
+<!-- individual board display view, start with h1 of indiv board name -->
+<!-- board-meta is in boards.css.scss
+gives a big line-height, some padding etc, and a fairly thick double line around it  -->
 <section class="board-meta row clearfix">
   <%= link_to @board.user, class: 'span3 board-user pull-left' do %>
     <%= image_tag @board.user_image_url %>
     <%= content_tag :span, @board.user_name %>
   <% end %>
-
+<!-- the board's user's name, image and username -->
   <%= link_to "Edit", edit_board_path(@board), class: 'span1 offset2 board-edit-link btn' if i_own?(@board) %>
 
   <span class="pull-right board-info"><%= pluralize @board.pins.count, "pin" %></span>

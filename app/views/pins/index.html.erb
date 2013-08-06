@@ -1,4 +1,8 @@
 <% if !user_signed_in? %>
+<!-- if the user is not signed in, put up a signin form
+letting them sign-in with their twitter account
+Shows big blue button with bird and then the word Twitter
+ -->
   <div class="signup hero-unit well">
     <h2>Sign in with...</h2>
     <%= link_to user_omniauth_authorize_path(:twitter), class: 'big-button twitter' do %>
@@ -7,6 +11,7 @@
   </div>
 <% end %>
 
+<!-- either render the pins or the "Oh nooos" message from _empty partial for no pins -->
 <%= render layout: 'layouts/pins' do %>
   <%= render(@pins) || render("empty") %>
 <% end %>
